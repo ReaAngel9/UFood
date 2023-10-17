@@ -1,0 +1,46 @@
+<div class="container" ngDefaultControl [(ngModel)]="posts">
+  <div class="image">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <img mat-card-image src="{{ posts.imageUrl }}" alt="Photo of a Shiba Inu" />
+
+    <!-- <mat-card-actions>
+      <button mat-icon-button color="warn">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button color="warn"><mat-icon>share</mat-icon></button>
+      <button mat-icon-button color="warn"><mat-icon>chat</mat-icon></button>
+    </mat-card-actions> -->
+  </div>
+
+  <div class="content">
+    <mat-card-content>
+      <mat-card-title>{{ posts.title }}</mat-card-title>
+      <!-- <mat-card-subtitle>{{ posts.title }}</mat-card-subtitle> -->
+      <p>
+        {{posts.description}}
+      </p>
+      <mat-card-subtitle>Ingredients</mat-card-subtitle>
+      <ul ngDefaultControl *ngFor="let element of ingredients">
+        <li>{{ element }}</li>
+      </ul>
+      <br />
+      <mat-card-subtitle>Procedure</mat-card-subtitle><br />
+      <ul ngDefaultControl *ngFor="let element of procedure">
+        <li>{{ element }}</li>
+      </ul>
+            <br><br><br><br><br><br><br><br>
+            <mat-card-subtitle>Comments</mat-card-subtitle>
+            <br>
+                <div class="commentsSection" *ngFor=" let i of comment">
+                    <p>{{i}}</p>
+                </div>
+            <br>
+            <div class="PutComm">
+                <input type="text" name="" id="comments" placeholder="Comment..." [(ngModel)]="comm">
+                <button (click)="addComment()" class="send">Send</button>
+            </div>
+        </mat-card-content>
+    </div>
+</div>

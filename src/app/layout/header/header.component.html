@@ -1,0 +1,80 @@
+<!-- <div class="head">
+    <a><input type="text" name="search" id="search" placeholder="Search..." /> |</a>
+    <a routerLink="signUp" id="signup">Join us!</a>
+    <button mat-icon-button routerLink="inbox" id="messages"><i class='far fa-comment'></i></button>
+    <button mat-icon-button routerLink="inbox" id="notifications"><i class='far fa-bell'></i></button>
+  </div> -->
+  <header>
+    <mat-toolbar color="warn">
+      <mat-toolbar-row>
+        <button mat-icon-button>
+          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <!-- <h1>UFood</h1> -->
+        <a href="#" routerLink="home">
+          <img
+            src="/assets/UFood_Icon.png"
+            style="height: 40px; width: 45px"
+          />
+        </a>
+        <mat-form-field id="search">
+          <input matInput type="text" [(ngModel)]="userToFind" (keydown.enter)="findUser(userToFind)" spellcheck="false" autocomplete="none" placeholder="Search user..."  >
+          <button matSuffix mat-icon-button (click)="findUser(userToFind)">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+        <!-- <button mat-icon-button routerLink="inbox" id="messages">
+          <i class="far fa-comment"></i>
+        </button> -->
+        <!-- <button mat-icon-button id="notifications">
+          <i class="far fa-bell"></i>
+        </button> -->
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav>
+        <mat-nav-list>
+          <a mat-list-item routerLink="home"><mat-icon>home</mat-icon>Home </a>
+          <a mat-list-item routerLink="explore"
+            ><mat-icon>explore</mat-icon>Explore
+          </a>
+          <!-- <a mat-list-item routerLink="inbox"><mat-icon>chat</mat-icon>Chat </a> -->
+          <a mat-list-item (click)="openDialog()"><mat-icon>add</mat-icon>Crear </a>          
+          <a mat-list-item (click)="navigateToUser()"><mat-icon>person</mat-icon>Profile </a>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a mat-list-item *ngIf="isVisible" routerLink="home" (click)="logOut()" ><mat-icon>launch icon</mat-icon>Log Out </a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div style="height: 88vh">
+          <router-outlet> </router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </header>
+  
+  <!-- 
+      <mat-toolbar color="warn">
+        <mat-toolbar-row>
+          <button mat-button><mat-icon>menu</mat-icon></button>
+          <button mat-button><mat-icon>home</mat-icon></button>
+    </mat-toolbar-row>
+   </mat-toolbar> -->

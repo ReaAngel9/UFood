@@ -1,0 +1,76 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    div{
+        width: 60%;
+        // float: left;
+    }
+
+    .imgProfile{
+        width: 10%;
+        height: 100%;
+        object-fit: cover;
+        margin-left: 5rem;
+        margin-right: 3rem;
+        margin-top: 2rem;
+    }
+
+    .content{
+        // margin-left: 4rem;
+        width: 1500px;
+        margin-top: 2rem;
+    }
+
+    button{
+        margin-top: 2rem;
+        margin-left: 3rem;
+    }
+  }
+
+  .followers{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.profDescription{
+    text-align: center;
+    margin-top: 1rem;
+}  
+
+mat-tab{
+    width: 100%;
+}
+
+.container2{
+    // width: 100%;
+    // height: 100vh;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container3{
+    width: 400px;
+    height: 100vh;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+}
+
+
+#inputFile{
+    color: #ce4f45;
+    // background-color: #ce4f45;
+}
+
+img{
+    width: 102px;
+    height: 102px;
+    object-fit: cover;
+}

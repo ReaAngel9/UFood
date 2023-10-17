@@ -1,0 +1,44 @@
+<!-- <p>dialog works!</p> -->
+
+<div class="form-container">
+    <form [formGroup]="postForm" (submit)="createPost()">
+        <h2>Hacer una publicación</h2>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title" id="title">
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Ingredients</mat-label>
+            <textarea matInput type="text" formControlName="ingredients" id="ingredients"></textarea>
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput type="email" formControlName="description" id="description">
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Procedure</mat-label>
+            <textarea matInput type="password" name="" id="pass" formControlName="procedure"></textarea>
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Image</mat-label>
+            <input matInput type="text" name="" id="image" formControlName="image">
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field>
+
+       <!-- <input #imageElement type="file" name="" id="" placeholder="Seleccione Imagen" formControlName="image" [(ngModel)]="file" (change)="doOnChange(imageElement)"> -->
+
+        <div>
+            <br>
+            <button mat-flat-button color="primary" [disabled]="postForm.invalid" id="create">Crear</button>
+        </div>
+    </form>
+    <button mat-flat-button color="warn" class="cancel" mat-dialog-close (click)="cancel()">Cancelar</button>
+</div>

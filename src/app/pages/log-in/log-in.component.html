@@ -1,0 +1,51 @@
+<!-- <p>log-in works!</p>
+
+<a href="signUp"> Join Us!</a> -->
+<div class="container">
+  <div class="logo">
+    <img src="/assets/Plate.png" alt="" />
+  </div>
+
+  <div class="login">
+    <form class="custom-form" [formGroup]="loginForm" (submit)="logIn()">
+      <h1>Login</h1>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" formControlName="username" id="username" />
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          id="password"
+        />
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+      <!-- <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" formControlName="confirmPass" id="confirmPass"/>
+            <mat-error>Este campo es requerido</mat-error>
+        </mat-form-field> -->
+      <div *ngIf="badAuth" style="color: red">
+        Oops! looks like your username and/or password is invalid!
+      </div>
+      <button mat-flat-button color="warn" [disabled]="loginForm.invalid">
+        Log in
+      </button>
+      <span>If you don't have an account, Join Us...!</span>
+      <div>
+        <a (click)="redirect()">
+          <!-- <button mat-flat-button color="warn" (click)="redirect()">Register Now</button> -->
+          Register Now
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div *ngIf="error">
+    <p>{{ error }}</p>
+</div> -->
